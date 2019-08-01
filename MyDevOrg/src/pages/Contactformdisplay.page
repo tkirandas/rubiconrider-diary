@@ -1,0 +1,37 @@
+<apex:page controller="contactform"  >
+    
+    <apex:sectionHeader title="Contact form"/>
+    <apex:form id="fm1">
+    <apex:pageBlock id="pb1" >
+        <apex:pageBlockSection columns="2" >
+         FirstName
+        <apex:inputText value="{!firstname}"/>
+        LastName
+            <apex:inputText value="{!lastname}"/>
+            Email
+           <apex:inputText value="{!email1}"/> 
+            RecordType
+                 <apex:selectList value="{!selectedRecordTypes}"  size="1" >
+                <apex:selectOptions value="{!recordTypes}" />
+     
+            </apex:selectList>
+         <apex:commandButton value="submit" action="{!submit1}">
+               
+            </apex:commandButton>
+
+          </apex:pageBlockSection>
+        
+                </apex:pageBlock>
+               <apex:pageBlock id="pb2"  title="Selected Values"  >
+            <apex:pageBlockTable value="{!accs1}" var="a" >
+                <apex:column value="{!a.firstname}"/>
+                <apex:column value="{!a.lastname}"/>
+                <apex:column value="{!a.email}"/>
+                <apex:column value="{!a.RecordType.Name}"/>
+                <apex:column value="{!a.new_Record_type__c}"/>
+                  <apex:column value="{!a.OwnerId}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        
+        </apex:form>
+</apex:page>

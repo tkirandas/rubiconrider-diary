@@ -1,0 +1,28 @@
+<apex:page controller="stuDataList" >
+    <apex:form >
+    <apex:pageBlock title="List Example">
+        <apex:pageBlockButtons location="top">
+            <apex:commandButton value="Names" action="{!getNames}"/>
+            <apex:commandButton value="students" action="{!getStudents}"/>
+            <apex:commandButton value="Accounts" action="{! getAccount}"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection title="Names" rendered="{!!ISNULL(accs)}">
+            <apex:pageBlockTable value="{!accs}" var="a">
+                <apex:column value="{!a}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="students" rendered="{!!ISNULL(studs)}">
+            <apex:pageBlockTable value="{!studs}" var="a">
+                <apex:column headervalue="Name" value="{!a.name}"/>
+                  <apex:column headervalue="Age" value="{!a.age}"/>
+            </apex:pageBlockTable>
+      </apex:pageBlockSection>
+        <apex:pageBlockSection title="Account" rendered="{!!ISNULL(accList)}">
+            <apex:pageBlockTable value="{!accList}" var="a">
+                <apex:column value="{!a.name}"/>
+                  <apex:column value="{!a.industry}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,4 @@
+<apex:page controller="methodcallonload" action="{!show}" >
+    <apex:actionSupport event="onload" action="{!show}"/>
+    <apex:detail subject="{! $User.Id}"/>
+</apex:page>

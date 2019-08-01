@@ -1,0 +1,17 @@
+<apex:page controller="apex10PickList">
+    <apex:form >
+    <apex:pageBlock title="PickList Example" id="one">
+		<apex:selectList value="{!selected}" size="1">
+            <apex:selectOption itemLabel="-None-" itemValue="None"/>
+                <apex:selectOption itemDisabled="true" itemLabel="TG" itemValue="Hyd"/>
+                    <apex:selectOption itemLabel="TN" itemValue="che"/>
+                        <apex:selectOption itemLabel="Ka" itemValue="Ban"/>
+            	<apex:actionSupport event="onchange" action="{!show}" reRender="one" />
+        </apex:selectList>
+        {!result}
+        </apex:pageBlock>
+        <apex:pageBlock title="Result">
+        {!result}
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

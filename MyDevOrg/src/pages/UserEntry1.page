@@ -1,0 +1,21 @@
+<apex:page controller="UserEntry" >
+    <apex:form >
+    <apex:pageBlock >
+        <apex:commandButton value="search" action="{!getUserItems}"/>
+        <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Users" />
+                    <apex:selectList size="1"  value="{!k}" >
+                        <apex:selectOptions value="{!options}" />
+                              </apex:selectList>
+                </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+        <apex:commandButton value="UserLeads" action="{!UserLeadData}"/>
+        <apex:pageBlockTable value="{!totalead}" var="a">
+            <apex:column value="{!a.phone}"/>
+        </apex:pageBlockTable>
+        
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

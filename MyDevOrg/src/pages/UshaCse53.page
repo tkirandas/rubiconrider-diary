@@ -1,0 +1,45 @@
+<apex:page controller="Ushacse53" tabStyle="Account">
+ <apex:form >
+    <apex:pageBlock id="pg">
+        <apex:pageBlockSection >
+            <apex:panelGrid columns="3" cellpadding="3" cellspacing="3">
+                <apex:outputLabel value="Account Name: "/>
+                <apex:inputText value="{!acctName}"/>
+                <apex:commandButton value="Go" action="{!searchAcct}"  reRender="pg"/>
+            </apex:panelGrid> 
+        </apex:pageBlockSection>
+        <apex:pageBlockSection rendered="{! listAcctOptions.Size >0}" title="Account Selection">
+            <apex:panelGrid columns="2">
+                <apex:outputLabel value="Select Account: "/>
+                <apex:selectList value="{!selectedAcctId}" size="1">
+                    <apex:selectOptions value="{!listAcctOptions}"/>
+                    <!--<apex:actionSupport action="{!fetchRecords}" event="onchange"/> -->
+                </apex:selectList>
+            </apex:panelGrid>
+        </apex:pageBlockSection>       
+               <!-- <apex:pageBlockSection rendered="{!listOpptys.Size > 0}" title="Opportunities">
+            <apex:pageBlockTable value="{!listOpptys}" var="oppty">
+                <apex:column >
+                    <apex:outputLink  value="/{!oppty.Id}">{!oppty.Name}</apex:outputLink>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection> -->
+        <apex:pageBlock id="op" rendered="{!selectedAcctId}">
+           enter op name:<apex:inputText value="{!sop}"/>
+                <apex:commandButton value="Go" action="{!fetchRecords}"  >
+            </apex:commandButton>
+            </apex:pageBlock>
+        <apex:pageBlockSection rendered="{!!(accs.Size>0)}" title="Opportunities">
+            <apex:pageBlockTable value="{!accs}" var="oppty">
+                <apex:column >
+                    <apex:repeat >
+                    {!oppty.Name}
+                    </apex:repeat>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+   
+</apex:form>
+
+</apex:page>

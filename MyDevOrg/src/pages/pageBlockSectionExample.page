@@ -1,0 +1,16 @@
+<apex:page >
+    
+    <apex:pageBlock title="pageBlockTitle" tabstyle="Vehicle__c">
+    <apex:pageBlockSection title="section" columns="3" collapsible="false">
+        <apex:pageBlock title="Block1">
+            Thi is one
+        </apex:pageBlock>
+        <apex:pageBlock title="Block2">
+            Thi is one
+        </apex:pageBlock>
+        <apex:pageBlock title="Block3">
+            Thi is one
+        </apex:pageBlock>
+        </apex:pageBlockSection>
+   </apex:pageBlock>
+</apex:page>

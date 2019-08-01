@@ -1,0 +1,7 @@
+<apex:page >
+    <apex:form >
+        <apex:outputLabel value="Enter Name"/><br/>
+        <apex:outputLabel value="{!$User.LastName}"/><br/>
+  <apex:outputLabel >Enter password</apex:outputLabel>
+    </apex:form>
+</apex:page>

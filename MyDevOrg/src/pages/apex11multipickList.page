@@ -1,0 +1,19 @@
+<apex:page >
+    <apex:form >
+    <apex:selectList multiselect="true">
+        <apex:selectOption itemLabel="-None-" itemValue="None"/>
+                <apex:selectOption itemLabel="TG" itemValue="Hyd"/>
+                    <apex:selectOption itemLabel="TN" itemValue="che"/>
+                        <apex:selectOption itemLabel="Ka" itemValue="Ban"/>
+        </apex:selectList>
+        <br/><br/>
+      <apex:selectCheckboxes >
+        <apex:selectOption itemLabel="TG" itemValue="Hyd"/>
+                    <apex:selectOption itemLabel="TN" itemValue="che"/>
+        </apex:selectCheckboxes>
+        <apex:selectRadio >
+        <apex:selectOption itemLabel="TG" itemValue="Hyd"/>
+                    <apex:selectOption itemLabel="TN" itemValue="che"/>
+        </apex:selectRadio>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,24 @@
+<apex:page controller="YoutubeExample">
+    <apex:form >
+    	<apex:pageBlock title="Youtube Parameters">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Search" action="{!connectYoutube}" />
+            </apex:pageBlockButtons>
+        	<apex:pageBlockSection >
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Enter Api Key" />
+                    <apex:inputText value="{!apikey}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Enter Search Text" />
+                    <apex:inputText value="{!searchText}" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock title="Result" id="one" rendered="{! !ISNULL(videoNames)}" >
+        	<apex:pageBlockTable value="{!videoNames}" var="a">
+                <apex:column value="{!a}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

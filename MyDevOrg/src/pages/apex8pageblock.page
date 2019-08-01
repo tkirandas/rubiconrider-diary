@@ -1,0 +1,17 @@
+<apex:page >
+<apex:form >
+    <apex:pageBlock title="Employee Data">
+    	<apex:pageBlockSection >
+        	<apex:pageBlockSectionItem >
+                <apex:outputlabel value="Enter Name"/>
+                <apex:inputText />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputlabel value="Enter Password"/>
+                <apex:inputSecret />
+            </apex:pageBlockSectionItem>
+
+        </apex:pageBlockSection> 
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

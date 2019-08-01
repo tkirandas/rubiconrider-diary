@@ -1,0 +1,7 @@
+<design:component label="Hello World">
+    
+    <sfdc:objects>
+        <sfdc:object>Vehicle__c</sfdc:object>
+        <sfdc:object>Opportunity</sfdc:object>
+    </sfdc:objects>
+</design:component>

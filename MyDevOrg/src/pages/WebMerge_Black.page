@@ -1,0 +1,6 @@
+<!--<apex:page standardController="Black_List__c" docType="html-5.0" title="Webmerge BlackList: {!Black_List__c.Name}">
+Test 
+    <webm:WebmergeWizard record="{!Black_List__c}" />
+</apex:page>
+-->
+<apex:page ></apex:page>

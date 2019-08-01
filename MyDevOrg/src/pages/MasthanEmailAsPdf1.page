@@ -1,0 +1,22 @@
+<apex:page controller="MasthanEmailAsPdf"  >
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:commandButton action="{!use}" value="CLick" reRender="pbt" />
+             <apex:commandButton action="{!saveToPdf}" value="Save to PDF">
+        </apex:commandButton>
+            <apex:pageBlockTable value="{!listusers}" var="u" id="pbt">
+                <apex:column >
+                	<apex:inputCheckbox value="{!u.check1}" >
+                    	<apex:actionSupport action="{!add}" event="onclick" reRender="pbt1" />
+                    </apex:inputCheckbox>
+                </apex:column>
+            	<apex:column value="{!u.users.name}" />
+                <apex:column value="{!u.users.email}" />
+            </apex:pageBlockTable>
+            <apex:pageBlockTable value="{!selusers}" var="us" id="pbt1">
+            	<apex:column value="{!us.name}" />
+                <apex:column value="{!us.email}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

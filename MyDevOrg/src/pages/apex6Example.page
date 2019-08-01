@@ -1,0 +1,11 @@
+<apex:page controller="apexExample6">
+    <apex:sectionHeader title="student" subtitle="{!sectionTitle}"/>
+    <apex:form >
+    <apex:pageBlock title="student data">
+        <apex:pageBlockButtons location="top">
+        <apex:commandButton value="create" action="{!callme}"/>
+        </apex:pageBlockButtons>
+		{!body}
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

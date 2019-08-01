@@ -1,0 +1,60 @@
+<apex:page standardController="Account" recordSetVar="items" >
+    <style>
+    	.one{
+        		background:#ACFA58;
+        }
+        .two{
+        		background:#2EFEF7;
+        }
+        .three{
+        		background:#819FF7;
+        }
+        .four{
+        	width:50px;
+        	
+        }
+    </style>
+    <apex:pageBlock title="PageBlockTable">
+    	<apex:pageBlockTable value="{!items}" var="a" >
+            <apex:column value="{!a.name}" />
+            <apex:column value="{!a.industry}" />
+            <apex:column value="{!a.phone}" />
+            <apex:column value="{!a.type}" />
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    <apex:pageBlock title="PageBlockTable" >
+    	<apex:pageBlockTable value="{!items}" var="a" first="5" rows="2">
+            <apex:column value="{!a.name}" />
+            <apex:column value="{!a.industry}" />
+            <apex:column value="{!a.phone}" />
+            <apex:column value="{!a.type}" />
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+     <apex:pageBlock title="PageBlockTable" >
+    	<apex:pageBlockTable value="{!items}" var="a" columnsWidth="100,100,100,100">
+            <apex:column value="{!a.name}" />
+            <apex:column value="{!a.industry}" />
+            <apex:column value="{!a.phone}" />
+            <apex:column value="{!a.type}" />
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+     <apex:pageBlock title="PageBlockTable" >
+    	<apex:pageBlockTable value="{!items}" var="a" captionClass="one" footerClass="two" headerClass="three">
+            <apex:facet name="caption"> PageBlockTable Caption</apex:facet>
+            <apex:facet name="header"> PageBlockTable Header</apex:facet>
+            <apex:facet name="footer"> PageBlockTable Footer</apex:facet>
+            <apex:column value="{!a.name}" />
+            <apex:column value="{!a.industry}" />
+            <apex:column value="{!a.phone}" />
+            <apex:column value="{!a.type}" />
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+     <apex:pageBlock title="PageBlockTable" >
+        
+    	<apex:pageBlockTable value="{!items}" var="a" align="right" styleClass="four" captionStyle="color:red;" >
+            <apex:column value="{!a.name}" />
+            <apex:column value="{!a.industry}" />
+           <apex:facet name="caption">This is my table</apex:facet>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

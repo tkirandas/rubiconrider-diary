@@ -1,0 +1,13 @@
+<apex:page controller="ActionPoller1">
+    <apex:form >
+        <apex:commandButton value="click" action="{!callme}"/>
+        <apex:actionPoller action="{!callme}" interval="5" reRender="one"/>
+        <apex:outputPanel id="one">
+            Result:{!result}<br/>
+            Count:{!count}
+            
+        </apex:outputPanel>
+        
+    </apex:form>
+    
+</apex:page>

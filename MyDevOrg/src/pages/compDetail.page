@@ -1,0 +1,5 @@
+<apex:page standardController="Account">
+
+   <apex:detail subject="{!Account.name}"/>
+
+</apex:page>

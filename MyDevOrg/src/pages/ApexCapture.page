@@ -1,0 +1,6 @@
+<apex:page controller="ApexClassExample">
+    <apex:sectionHeader title="{!sectionTitle}" subtitle="{!subTitle}" help="{!help}"/>
+    <apex:pageBlock title="{!pageBlockTitle}" dir="{!direction}">
+        {!body}
+    </apex:pageBlock>
+</apex:page>

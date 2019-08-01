@@ -1,0 +1,23 @@
+<apex:page controller="ActionExample2">
+    <apex:form >
+    <apex:pageBlock title="ActionExample" >
+        <apex:pageBlockSection >
+            <apex:actionRegion >
+<apex:pageBlockSectionItem >
+    <apex:outputLabel value="Enter Name"/>
+                <apex:inputText value="{!name}" >
+                <apex:actionSupport event="onchange" action="{!show}" reRender="one"/>
+                </apex:inputText>
+                       </apex:pageBlockSectionItem>            
+            </apex:actionRegion>
+            <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Enter Branch"/>
+                <apex:inputText value="{!branch}" />
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock id="one">
+        {!result}
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

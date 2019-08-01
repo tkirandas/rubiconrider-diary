@@ -1,0 +1,8 @@
+<apex:page Controller="kiranCase">
+  <apex:form >
+      Hello
+   <!--   <apex:inputField id="param1" value="{!$currentpage.parameter.Paramtervalue}" /> -->
+   
+                     value={!$CurrentPage.Parameters.id} 
+      </apex:form>
+</apex:page>

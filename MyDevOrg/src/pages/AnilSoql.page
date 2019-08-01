@@ -1,0 +1,28 @@
+<apex:page controller="Anilsoql1">
+    <style>
+    	.block{
+        width:120px;
+        }
+    </style>
+    <apex:form >
+    	<apex:pageBlock title="Dynamic soql">
+        	<apex:pageBlockSection columns="4">
+            	<apex:selectList value="{!fldSelected}" size="1" styleClass="block" >
+                    <apex:selectOptions value="{!fields}"/>
+                </apex:selectList>
+                <apex:selectList value="{!opSelected}" size="1" styleClass="block">
+                    <apex:selectOptions value="{!operators}"/>
+                </apex:selectList>
+                <apex:inputText value="{!value}" styleClass="block"/>
+                <apex:commandButton value="getdata" action="{!runQuery}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock title="Data Result" rendered="{!!ISNULL(accs)}">
+        	<apex:pageBlockTable value="{!accs}" var="a">
+                <apex:column value="{!a.name}"/>
+                <apex:column value="{!a.industry}"/>
+                <apex:column value="{!a.phone}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

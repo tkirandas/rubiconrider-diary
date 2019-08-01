@@ -1,0 +1,62 @@
+<apex:page controller="SchemaFinalExample" sidebar="false">
+    <style>
+    	.block{
+        	height:100px;
+        	width:150px;
+        }
+    </style>
+    <apex:form >
+    	<apex:pageBlock title="Schema with Dynamic Soql">
+            <apex:pageBlockButtons location="Bottom">
+                <apex:commandButton value="Submit"  />
+                <apex:commandButton value="Add Filter" action="{!writeFilters}" />
+            </apex:pageBlockButtons>
+        	<apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Objects" />
+                    <apex:selectList size="1" value="{!objselected}" >
+                        <apex:selectOptions value="{!objects}" />
+                        <apex:actionSupport event="onchange" action="{!getFieldOptions}" status="fieldStatus" reRender="pg"/>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:panelGrid columns="3" id="pg">
+                    <apex:selectList value="{!added}" multiselect="true" styleClass="block" >
+                        <apex:selectOptions value="{!notSelectedOptions}" />
+                    </apex:selectList>
+                    <apex:panelGrid columns="1">
+                        <apex:commandButton value="Add" action="{!addEle}" reRender="pg" />
+                        <br/> <br/>
+                        <apex:commandButton value="Del" action="{!removeEle}" reRender="pg" />
+                    </apex:panelGrid>
+                      <apex:selectList value="{!removed}" multiselect="true" styleClass="block" >
+                        <apex:selectOptions value="{!selectedOptions}" />
+                    </apex:selectList>
+                </apex:panelGrid>
+            </apex:pageBlockSection>
+            <apex:actionStatus startText="Loading Fields..." id="fieldStatus"> </apex:actionStatus>
+        </apex:pageBlock>
+        <apex:pageBlock title="Filter Conditions" rendered="{! !ISNULL(filterList)}" >
+        	<apex:pageBlockButtons location="top">
+                <apex:inputText value="{!query}" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!filterList}" var="a" id="page">
+            	<apex:column headerValue="Fields">
+                	<apex:selectList value="{!a.selected}" size="1">
+                        <apex:selectOptions value="{!a.fieldsList}" />
+                    </apex:selectList>
+                </apex:column>
+                <apex:column headervalue="Operators">
+                	<apex:selectList value="{!a.operator}" size="1">
+                        <apex:selectOptions value="{!a.operatorList}" />
+                    </apex:selectList>
+                </apex:column>
+                <apex:column headerValue="Value">
+                    <apex:inputText value="{!a.value}" />
+                </apex:column>
+                <apex:column >
+                    <apex:commandButton value="Add" action="{!addFilter}" reRender="page" />
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

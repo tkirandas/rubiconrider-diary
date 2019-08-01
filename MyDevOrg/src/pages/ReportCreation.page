@@ -1,0 +1,27 @@
+<apex:page readOnly="true" controller="ReportCreation" id="page" docType="html-5.0" >
+    <apex:form id="form">
+    	<apex:pageBlock id="pb">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Submit" action="{!report}" >
+                    <apex:actionSupport event="onclick" reRender="pb"/>
+                </apex:commandButton>
+            </apex:pageBlockButtons>
+        	<apex:pageBlockSection >
+            </apex:pageBlockSection>
+            <apex:pageBlockSection id="one">
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="FromDate" />
+                    <apex:inputText value="{!fromDate}" html-placeholder="yyyy-mm-dd"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="ToDate"/>
+                    <apex:inputText value="{!toDate}" html-placeholder="yyyy-mm-dd"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockTable value="{!acc}" var="a" >
+                <apex:column headervalue="Name" value="{!a.Name}" />
+                <apex:column headervalue="Industry" value="{!a.industry}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

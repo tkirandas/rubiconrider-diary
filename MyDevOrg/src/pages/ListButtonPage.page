@@ -1,0 +1,14 @@
+<apex:page standardController="Account" extensions="ListButton" recordSetVar="items">
+    <apex:form >
+       
+    <apex:pageBlock title="Account Records">
+
+        <apex:pageBlockTable value="{!items}" var="a">
+        <apex:column value="{!a.name}"/>
+        <apex:column value="{!a.industry}"/>
+        </apex:pageBlockTable>
+
+        </apex:pageBlock>
+            
+</apex:form>
+    </apex:page>

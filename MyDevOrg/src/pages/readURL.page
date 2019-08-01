@@ -1,0 +1,4 @@
+<apex:page >
+    Name:{!$CurrentPage.parameters.Name}<br/>
+    Age:{!$CurrentPage.parameters.Age}
+</apex:page>

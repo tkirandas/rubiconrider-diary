@@ -1,0 +1,74 @@
+<apex:page standardController="Account" recordSetVar="items">
+    <apex:pageBlock title="DataTable">
+    	<apex:dataTable value="{!items}" var="a">
+            <apex:column value="{!a.name}" />
+            <apex:column value="{!a.industry}" />
+            <apex:column value="{!a.phone}" />
+            <apex:column value="{!a.type}" />
+        </apex:dataTable>
+    </apex:pageBlock>
+     <apex:pageBlock title="DataTable">
+    	<apex:dataTable value="{!items}" var="a" rules="cols">
+            <apex:column value="{!a.name}" />
+            <apex:column value="{!a.industry}" />
+            <apex:column value="{!a.phone}" />
+            <apex:column value="{!a.type}" />
+        </apex:dataTable>
+    </apex:pageBlock>
+     <apex:pageBlock title="DataTable">
+    	<apex:dataTable value="{!items}" var="a" rules="rows">
+            <apex:column value="{!a.name}" />
+            <apex:column value="{!a.industry}" />
+            <apex:column value="{!a.phone}" />
+            <apex:column value="{!a.type}" />
+        </apex:dataTable>
+    </apex:pageBlock>
+     <apex:pageBlock title="DataTable">
+    	<apex:dataTable value="{!items}" var="a" rules="all">
+            <apex:column value="{!a.name}" />
+            <apex:column value="{!a.industry}" />
+            <apex:column value="{!a.phone}" />
+            <apex:column value="{!a.type}" />
+        </apex:dataTable>
+    </apex:pageBlock>
+     <apex:pageBlock title="DataTable">
+    	<apex:dataTable value="{!items}" var="a" frame="box">
+            <apex:column value="{!a.name}" />
+            <apex:column value="{!a.industry}" />
+            <apex:column value="{!a.phone}" />
+            <apex:column value="{!a.type}" />
+        </apex:dataTable>
+    </apex:pageBlock>
+     <apex:pageBlock title="DataTable">
+    	<apex:dataTable value="{!items}" var="a" frame="hsides">
+            <apex:column value="{!a.name}" />
+            <apex:column value="{!a.industry}" />
+            <apex:column value="{!a.phone}" />
+            <apex:column value="{!a.type}" />
+        </apex:dataTable>
+    </apex:pageBlock>
+     <apex:pageBlock title="DataTable">
+    	<apex:dataTable value="{!items}" var="a" frame="vsides">
+            <apex:column value="{!a.name}" />
+            <apex:column value="{!a.industry}" />
+            <apex:column value="{!a.phone}" />
+            <apex:column value="{!a.type}" />
+        </apex:dataTable>
+    </apex:pageBlock>
+     <apex:pageBlock title="DataTable">
+    	<apex:dataTable value="{!items}" var="a" border="2" bgcolor="yellow">
+            <apex:column value="{!a.name}" />
+            <apex:column value="{!a.industry}" />
+            <apex:column value="{!a.phone}" />
+            <apex:column value="{!a.type}" />
+        </apex:dataTable>
+    </apex:pageBlock>
+     <apex:pageBlock title="DataTable">
+    	<apex:dataTable value="{!items}" var="a" cellpadding="15" cellspacing="20"  border="2" >
+            <apex:column value="{!a.name}" />
+            <apex:column value="{!a.industry}" />
+            <apex:column value="{!a.phone}" />
+            <apex:column value="{!a.type}" />
+        </apex:dataTable>
+    </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,33 @@
+<apex:page controller="soqlPrnt2Child">
+    <apex:form >
+    <apex:pageBlock title="Account to Contacts">
+        <apex:pageBlockTable value="{!accs}" var="a">
+            <apex:column value="{!a.name}"/>
+        <apex:column value="{!a.industry}"/>
+            <apex:column >
+                
+            <apex:repeat value="{!a.contacts}" var="b">
+                {!b.lastname}------{!b.firstname}<br/>
+                
+                </apex:repeat>
+            </apex:column>
+            <apex:column value="{!a.contacts.size}"/>
+        </apex:pageBlockTable>
+        <apex:pageBlock title="Parent to child query">
+        <apex:pageBlockTable value="{!cards}" var="k">
+            <apex:column value="{!k.First_Name__c}"/>
+            <apex:column value="{!k.Email__c}"/>
+            
+            <apex:column >
+                
+               
+            <apex:repeat value="{!k.Transctions__r}" var="m">
+                {!m.Amount__c}======={!m.Transaction_Type__c}<br/>
+                </apex:repeat>
+                </apex:column>
+            
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
