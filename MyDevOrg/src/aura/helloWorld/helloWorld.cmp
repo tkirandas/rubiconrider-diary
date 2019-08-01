@@ -1,0 +1,11 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" controller="HelloWorldController">
+   <aura:attribute name="greeting" type="String" default="World" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <lightning:input name="Greeting" label="Greeting" value="{!v.greeting}"/>
+Hello, {!v.greeting}!
+    
+   <!-- <p> Hello Lightning World</p>
+    <c:helloMessage message="What a wonderful day"/> -->
+    
+    
+</aura:component>

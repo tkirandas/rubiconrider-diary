@@ -1,0 +1,18 @@
+<apex:page controller="sampleEmailBodyTest">
+  <apex:form >
+      <apex:inputTextarea richText="true" value="{!first.emailbody__c}"/>
+      <apex:outputField value="{!first.emailbody__c}"/>>
+  <apex:pageBlock >
+   <apex:pageBlockTable value="{!list1}" var="a">
+       <apex:outputText ></apex:outputText>
+       
+      </apex:pageBlockTable>
+    
+      
+    </apex:pageBlock>     
+      
+                
+                
+    </apex:form>             
+        
+</apex:page>

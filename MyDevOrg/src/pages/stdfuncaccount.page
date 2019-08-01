@@ -1,0 +1,30 @@
+<apex:page standardController="Account" recordSetVar="items" showheader="true" sidebar="false" >
+    <apex:form >
+    Filter
+        <apex:selectList value="{!filterId}" size="1">
+            <apex:selectOptions value="{!listviewoptions}"/>
+            <apex:actionSupport event="onchange" reRender="one"/>
+                </apex:selectList>
+        <br/><br/>
+        <apex:pageBlock title="PageBlock" id="one">
+        <apex:pageBlockTable value="{!items}" var="a">
+            <apex:column >
+            <apex:facet name="Header"><apex:inputCheckbox />
+                </apex:facet>
+            </apex:column>
+            <apex:column headervalue="Action">
+                <apex:commandLink value="Edit " action="/{!a.id}/e"/>
+                | 
+                <apex:commandLink value=" Del" action="{!a.id}=null"/>
+            </apex:column>
+            <apex:column headerValue="Account Name">
+                <apex:commandLink value="{!a.name}" action="/{!a.id}"/>
+                        </apex:column>
+            
+            <apex:column value="{!a.industry}"/>
+            <apex:column value="{!a.phone}"/>
+            <apex:column value="{!a.type}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

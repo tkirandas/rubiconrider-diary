@@ -1,0 +1,8 @@
+<apex:page controller="QueryController">
+    <apex:form >
+       <apex:selectList value="{!selectedSobject}" size="1">
+            <apex:selectOptions value="{!objectNames }"/>
+        </apex:selectList>
+        <apex:commandButton value="Search" action="{!doSearch}"/>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,24 @@
+<apex:page controller="soqlexUpdate2">
+    <apex:form >
+    <apex:pageBlock title="Dynamic soql Update from VF page">
+        <apex:pageBlockButtons location="bottom">
+         <apex:commandButton value="Update" action="{!updateData}"/> 
+            </apex:pageBlockButtons>
+        
+            <apex:pageBlockSection >
+                <apex:outputLabel value="Name"/>
+                <apex:inputText value="{!sname}"/>
+            </apex:pageBlockSection>
+        <apex:pageBlockSection >
+                <apex:outputLabel value="Enter Phone Number"/>
+                <apex:inputText value="{!phone}"/>
+            </apex:pageBlockSection>
+               </apex:pageBlock>
+        <apex:pageblock title="Updated Record">
+            <apex:pageBlockTable value="{!accs}" var="a">
+                <apex:column value="{!a.name}"/>
+                                <apex:column value="{!a.phone}"/>                        
+           </apex:pageBlockTable>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,29 @@
+<aura:component >
+	<aura:attribute name="expense" type="credit_card__c"/>
+		<p>Amount Limit:
+			<ui:outputCurrency value="{!v.expnse.Card_Limit__c}"/>
+		</p>
+		<p>Card Type:
+			<ui:outputText value="{!v.expense.Card_Type__c}"/>
+		</p>
+		<p>Reimbursed?:
+			<ui:outputCheckbox value="{!v.expense.Reimbursed__c}"/>
+ 		</p>
+<br/><br/>
+    <aura:attribute name="usernameLabel" type="String" required="true" default="Username*"/>
+    		<div id="sfdc_username_container" class="sfdc">
+                <span id="sfdc_user" class="login-icon" data-icon="a"></span>
+                <ui:inputText value="" aura:id="username" placeholder="{!v.usernameLabel}" keyup="{!c.onKeyUp}" class="input sfdc_usernameinput sfdc" label="{!v.usernameLabel}" labelClass="assistiveText"/>
+            </div>
+<br/>
+     <aura:attribute name="passwordLabel" type="String" required="false" default="Password"/>
+    		<div id="sfdc_password_container" class="sfdc">
+                <span id="sfdc_lock" class="login-icon sfdc" data-icon="c"></span>
+                <ui:inputSecret value="" aura:id="password" placeholder="{!v.passwordLabel}" keyup="{!c.onKeyUp}" class="input sfdc_passwordinput sfdc" label="{!v.passwordLabel}" labelClass="assistiveText"/>
+            </div>
+ <br/>
+     <aura:attribute name="loginButtonLabel" type="String" required="false" default="Log in"/>
+    		<div class="sfdc">
+                <ui:button aura:id="submitButton" label="{!v.loginButtonLabel}" press="{!c.handleLogin}" class="sfdc_button"/>
+            </div>
+</aura:component>

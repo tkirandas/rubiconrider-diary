@@ -1,0 +1,8 @@
+<apex:page >
+    <apex:sectionHeader title="{! $User.LastName}" subtitle="{! $Organization.Name}"/>
+    <apex:pageBlock title="{! $User.FirstName}" helpUrl="www.google.com" helpTitle="help">
+        User LastName:{! $currentpage.parameters.LastName} <br/><br/>
+        User FirstName:{! $currentpage.parameters.FirstName}<br/><br/>
+        Organization:{! $Organization.Name}
+    </apex:pageBlock>
+</apex:page>

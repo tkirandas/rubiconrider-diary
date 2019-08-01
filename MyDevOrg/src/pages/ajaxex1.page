@@ -1,0 +1,18 @@
+<apex:page >
+ <apex:form >
+   <apex:commandButton value="click" onclick="show()"/>
+ </apex:form>
+ <script src="/soap/ajax/30.0/connection.js" type="text/javascript">
+ </script>
+ <script>
+    function show(){
+     try{
+ var result = sforce.connection.login("ortustech201@salesforce.com",
+                                      "ortus123");
+         alert("logged in with session id " + result.sessionId);
+       }catch(error) { 
+         alert(error);
+       }
+     }
+  </script>   
+</apex:page>

@@ -1,0 +1,15 @@
+<apex:page controller="controller2" renderAs="pdf" cache="true" showHeader="false">    
+
+    
+    <apex:dataList value="{!lu}" var="u" >
+            	{!u.name}
+                {!u.email}
+        </apex:dataList>
+   <apex:dataList value="{!bccs}" var="a">
+    {!a.id}
+        {!a.name}
+    
+    </apex:dataList> 
+   
+ 
+</apex:page>

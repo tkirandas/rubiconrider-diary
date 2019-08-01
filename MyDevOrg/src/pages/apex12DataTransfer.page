@@ -1,0 +1,37 @@
+<apex:page controller="apex12dataTransfer">
+    <apex:form >
+        <apex:pageBlock title="Input form">
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="submit" action="{!nextpage}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Name"/>
+                <apex:inputText value="{!name}"/>
+                 </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Age"/>
+                <apex:inputText value="{!age}"/>
+                    </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="city"/>
+                <apex:selectList size="1"  value="{!city}">
+                    
+                    <apex:selectOption itemLabel="-None-" itemValue="None"/>
+                <apex:selectOption itemLabel="TG" itemValue="Hyd"/>
+                    <apex:selectOption itemLabel="TN" itemValue="che"/>
+                        <apex:selectOption itemLabel="Ka" itemValue="Ban"/>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Gender"/>
+                    <apex:selectRadio value="{!gender}">
+                        <apex:selectOption itemLabel="Male" itemValue="male"/>
+                        <apex:selectOption itemlabel="Female" itemValue="female"/>
+                    </apex:selectRadio>
+                    
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

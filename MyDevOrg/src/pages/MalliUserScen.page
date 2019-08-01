@@ -1,0 +1,15 @@
+<apex:page controller="MalliUserScenario">
+  <apex:form >
+<apex:pageBlock id="one">
+      <apex:selectList value="{!selected}" size="1">
+          <apex:selectOptions value="{!UserList}"></apex:selectOptions>
+<apex:actionSupport event="onchange" action="{!show}" reRender="one" />
+      </apex:selectList>
+      <apex:pageBlockTable value="{!accs}" var="a">
+          <apex:column value="{!a.id}"/>
+          <apex:column value="{!a.name}"/>
+      </apex:pageBlockTable>
+    
+</apex:pageBlock>
+  </apex:form>
+</apex:page>

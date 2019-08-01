@@ -1,0 +1,19 @@
+<apex:page controller="PopUp" >
+    <apex:form >
+        
+    <apex:pageBlock id="pb1">
+        <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Get" action="{!search}"/>
+            </apex:pageBlockButtons>
+           <apex:pageBlockSection columns="2" > 
+               
+               <apex:outputLabel value="Enter Name"/>
+                <apex:inputText value="{!s}"/>
+            <apex:actionSupport event="onchange" action="{!search}" reRender="pb1"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockTable id="pb2" value="{!accs}" var="a">
+            <apex:column value="{!a.name}"/>
+        </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

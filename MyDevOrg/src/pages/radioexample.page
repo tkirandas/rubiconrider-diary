@@ -1,0 +1,23 @@
+<apex:page >
+        <apex:form >
+        <label for="chk1">
+            <input type="radio" id="chk1" name="check" value="I am submitting these documents per request from Immigration Deployment Specialist (IDS)"  onChange="documenttypeother(this);"/>
+            I am submitting these documents per request from Immigration Deployment Specialist (IDS)
+        </label>
+        <br/><br/>
+        <label for="chk2">
+            <input type="radio" id="chk2" name="check" value="I am submitting the documents proactively" onChange="documenttypeother(this);"/>
+            I am submitting the documents proactively
+        </label>
+        <br/><br/>
+        <label for="chk3">
+            <input type="radio" id="chk3" name="check" value="I have a client meeting and need to show sample redacted contract(s) to the client" onChange="documenttypeother(this);"/>
+            I have a client meeting and need to show sample redacted contract(s) to the client
+        </label>
+        <br/><br/>
+        <label for="chk4">
+            <input type="radio" id="chk4" name="check" value="Other" onChange="documenttypeother(this);" />
+            Other
+        </label>
+    </apex:form>
+</apex:page>

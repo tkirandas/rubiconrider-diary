@@ -1,0 +1,13 @@
+<apex:page controller="InboundExCustom2" >
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockSection >
+            <apex:pageBlockSectionItem >
+        <apex:outputLabel value="Amount"/>
+        <apex:inputField label="Amount" value="{!c.Amount__c}"/>
+                
+        </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

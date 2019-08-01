@@ -1,0 +1,39 @@
+<aura:component >
+  <!--  <ol>
+       <li>Bug Spray</li>
+       <li>Bear Repellant</li>
+       <li>Goat Food</li>      
+    </ol> -->
+    <aura:attribute name="items" type="Camping_Item__c[]"/>
+    <aura:attribute name="newItem" type="Camping_Item__c" default="{ 'sobjectType': 'Camping_Item__c','Name': '','quantity': 0,'price ': 0,'Packed':false }"/>
+    <!-- CREATE NEW EXPENSE -->
+    <div aria-labelledby="newcampingListform">
+        <!-- BOXED AREA -->
+        <fieldset class="slds-box slds-theme--default slds-container--small">
+        <legend id="newcampingListform" class="slds-text-heading--small 
+          slds-p-vertical--medium">
+          Add New Item
+        </legend>
+  
+        <!-- CREATE NEW EXPENSE FORM -->
+        <form class="slds-form--stacked">          
+            <lightning:input aura:id="newItemform" label="New Item Name" name="newItemname" value="{!v.newItem.Name}" required="true"/> 
+            <lightning:input type="number" aura:id="newItemform" label="Price" name="newItemPrice" min="0.1" formatter="currency" step="0.01" value="{!v.newItem.Price__c}" messageWhenRangeUnderflow="Enter Price at least as 1."/>
+            <lightning:input type="double" aura:id="newItemform" label="Quantity" name="newItemQuantity" min="0.1" formatter="double" step="0.01" value="{!v.newItem.Price__c}" messageWhenRangeUnderflow="Enter Quantity at least as 1."/>
+            
+            <lightning:input type="checkbox" aura:id="newItemform" label="Packed?"  
+                             name="newItemPacked"
+                             checked="{!v.newItem.Packed__c}"/>
+            <lightning:button label="Create Item" 
+                              class="slds-m-top--medium"
+                              variant="brand"
+                              onclick="{!c.clickCreateItem }"/>
+        </form>
+        <!-- / CREATE NEW EXPENSE FORM -->
+  
+      </fieldset>
+      <!-- / BOXED AREA -->
+    </div>
+    <!-- / CREATE NEW EXPENSE -->
+    
+</aura:component>

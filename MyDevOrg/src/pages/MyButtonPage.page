@@ -1,0 +1,5 @@
+<apex:page standardController="Account" extensions="MyButton">
+    Name:{!acc.Name}<br/><br/>
+    Industry:{!acc.Industry}<br/><br/>
+    Type:{!acc.Type}
+</apex:page>

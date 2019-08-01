@@ -1,0 +1,25 @@
+<apex:page controller="apex9pbSection">
+    <apex:form >
+       
+    <apex:pageBlock title="Employee data">
+        <apex:pageBlockSection columns="1" >
+            <apex:pageBlockSectionItem >
+                <apex:outputPanel >
+             <apex:outputlabel value="Name"/>
+                      		<apex:inputtext value="{!name}"/><br/><br/>
+            <apex:outputLabel value="Enter Age"/>
+                      <apex:inputText value="{!age}"/><br/>
+            <apex:commandButton value="Submit" action="{!getData}"/>
+                </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock title="Result" rendered="{! !ISNULL(result)}">
+        <apex:pageBlockSection columns="1">
+            <apex:pageBlockSectionItem >
+             {!result};
+                </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>  
+</apex:page>

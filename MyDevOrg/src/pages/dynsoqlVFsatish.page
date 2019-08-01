@@ -1,0 +1,26 @@
+<apex:page controller="dynsoqlsatish" >
+    <apex:form >
+    	<apex:pageBlock title="Account" >
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Search" action="{!search}"  />
+            </apex:pageBlockButtons>
+        	<apex:pageBlockSection >
+            	<apex:pageBlockSectionitem >
+                    <apex:outputLabel value="Enter Name" />
+                    <apex:inputText value="{!name}" />
+                </apex:pageBlockSectionitem>
+                <apex:pageBlockSectionitem >
+                    <apex:outputLabel value="Enter Industry" />
+                    <apex:inputText value="{!industry}" />
+                </apex:pageBlockSectionitem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="Result" rendered="{! !ISNULL(accs)}">
+        	<apex:pageBlockTable value="{!accs}" var="a">
+                <apex:column value="{!a.name}" />
+                <apex:column value="{!a.industry}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

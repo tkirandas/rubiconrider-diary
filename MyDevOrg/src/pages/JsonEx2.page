@@ -1,0 +1,5 @@
+<apex:page controller="JSONExample2" >
+    Account : {! result1} <br/>
+    List    :{! result2} <br/>
+    Decimal :{! result3}
+</apex:page>

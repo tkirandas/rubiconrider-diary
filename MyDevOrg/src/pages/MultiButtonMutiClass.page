@@ -1,0 +1,8 @@
+<apex:page standardController="Account" extensions="ClassOne,ClassTwo">
+    <apex:form >
+    <apex:commandButton value="show" action="{!show}"/>
+        <apex:commandButton value="call" action="{!call}"/>
+        Name:{!name}<br/><br/>
+        Result:{!result}
+    </apex:form>
+</apex:page>

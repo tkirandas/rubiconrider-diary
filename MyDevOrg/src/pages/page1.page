@@ -1,0 +1,6 @@
+<apex:page sidebar="false" >
+    <apex:sectionHeader title="vfpage" subtitle="New Page" description="this is first page"/>
+    {!$User.FirstName}<br/>
+    {!30+20}<br/>
+    {!$Organization.Name}
+</apex:page>

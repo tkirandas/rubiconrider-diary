@@ -1,0 +1,12 @@
+<apex:page controller="EmailExample2"  action="{!ex1}" renderAs="PDF">
+   Hello dear customer here is the bill for Jan
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!accs}" var="a">
+      <apex:column value="{!a.id}"/>
+        <apex:column value="{!a.name}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+    </apex:form>
+</apex:page>

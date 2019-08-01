@@ -1,0 +1,16 @@
+<apex:page controller="apex18UploadDoc" id="page">
+    <apex:form id="fm">
+    <script>
+      function show(){
+          var name=document.getElementById('page.fm.name').value;
+          alert(name);
+      </script>
+        <apex:outputLabel value="Resume"/>
+        <apex:inputFile filename="info.txt" value="{!body}"/><br/><br/>
+        <apex:outputLabel value="Active"/>
+        <apex:inputCheckbox /><br/><br/>
+        <apex:outputLabel value="Hidden"/>
+        <apex:inputHidden value="{!name}" id="name"/><br/><br/>
+        <apex:commandButton value="submit" onclick="show()"/>
+    </apex:form>
+</apex:page>

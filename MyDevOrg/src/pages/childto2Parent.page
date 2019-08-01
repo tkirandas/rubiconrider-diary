@@ -1,0 +1,19 @@
+<apex:page controller="child2Parent">
+    <apex:form >
+    <apex:pageBlock title="Contact Account">
+        <apex:pageBlockTable value="{!cons}" var="a">
+            <apex:column value="{!a.LastName}"/>
+            <apex:column value="{!a.FirstName}"/>
+            <apex:column value="{!a.Account.Name}"/>
+            <apex:column value="{!a.Account.Industry}"/>
+        </apex:pageBlockTable>
+        </apex:pageBlock>
+        <apex:pageBlock title="Transaction-Credit card">
+            <apex:pageBlockTable value="{!trans}" var="a">
+                <apex:column value="{!a.Amount__c}"/>
+                 <apex:column value="{!a.Credit_Card__r.Card_Type__c}"/>
+                
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

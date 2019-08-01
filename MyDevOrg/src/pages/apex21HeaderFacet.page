@@ -1,0 +1,21 @@
+<apex:page standardController="Account" recordSetVar="items">
+    <apex:form >
+        <apex:pageBlock title="MyBlock">
+            <apex:pageBlockTable value="{!items}" var="a">
+                <apex:column value="{!a.name}"/>
+                <apex:column >
+                {!a.name}
+                </apex:column>
+                <apex:column headerValue="MyName" value="{!a.name}"/>
+                <apex:column >
+                <apex:facet name="footer">My Name Header</apex:facet>
+                    {!a.name}
+                </apex:column>
+                <apex:column >
+                <apex:facet name="header">My Name Footer</apex:facet>
+                {!a.name}
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

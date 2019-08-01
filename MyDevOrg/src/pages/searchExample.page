@@ -1,0 +1,25 @@
+<apex:page standardController="Opportunity" extensions="SearchExample">
+       <apex:form >
+    	<apex:pageBlock title="search Opportunity" id="two">
+        	<apex:pageBlockSection title="enter deatails for search result" columns="1">
+                <apex:inputField value="{! Opportunity.Name}"/>
+                 <apex:inputField value="{! Opportunity.CloseDate}"/>
+                 <apex:inputField value="{! Opportunity.StageName}"/>
+                 <apex:inputField value="{! Opportunity.Type}"/>
+        	</apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock title="Select" id="one">
+        	
+            	<apex:selectRadio value="{!selected}">
+                    <apex:selectOption itemValue="New" itemLabel="New" />
+                    <apex:selectOption itemValue="Existing" itemLabel="Existing"/>
+                    <apex:actionSupport event="onchange" action="{! show}" reRender="one"/>
+                </apex:selectRadio>
+                
+           <apex:pageBlockSection title="New" rendered="{!flag2}">
+                Name: {!result} <br/> {!selected}
+            </apex:pageBlockSection>
+       
+        </apex:pageBlock>       
+    </apex:form>
+</apex:page>

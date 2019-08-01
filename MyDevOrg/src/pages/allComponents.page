@@ -1,0 +1,21 @@
+<apex:page sidebar="false" showHeader="false">
+   <apex:sectionHeader title="{!$User.FirstName}" subtitle="{! $User.LastName}"/>
+    <apex:form >
+        <apex:pageBlock title="Branch:{! $User.LastName}" tabstyle="Vehicle__C">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="save"/>
+                <apex:commandButton value="edit"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="studentdata" collapsible="false">
+                
+                Name:{!$User.FirstName}<br/>
+                Profile:{! $Profile.Name}<br/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Employeedata" collapsible="false">
+                
+                Name:{!$User.LastName}<br/>
+                Profile:{! $Profile.Name}
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

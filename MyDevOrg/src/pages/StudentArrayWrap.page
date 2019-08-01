@@ -1,0 +1,12 @@
+<apex:page controller="StudentLineItems" >
+    <apex:form >
+    	<apex:pageBlock title="Student Data" >
+        	<apex:pageBlockTable value="{!students}" var="a">
+                
+                <apex:column value="{!a.name}" />
+                <apex:column value="{!a.age}" />
+          
+                </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

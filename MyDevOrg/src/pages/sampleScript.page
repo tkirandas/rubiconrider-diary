@@ -1,0 +1,17 @@
+<apex:page >
+<apex:form id="theform">
+<script>
+function check()
+{
+    a = document.getElementById('{!$Component.count}').innerHTML;
+    document.getElementById('{!$Component.count2}').innerHTML = a;
+}
+</script>
+
+  <apex:outputtext id="count" value="{!50}" />
+  
+  <apex:outputtext id="count2" value="" />
+    
+  <apex:commandButton onclick="check();return false;" value="Click"/>
+</apex:form>
+</apex:page>

@@ -1,0 +1,25 @@
+<apex:page Controller="EmailAsPdf" renderAs="pdf">  
+  <h1>List of Records</h1>
+  <apex:form >
+       <apex:pageBlock >
+           <apex:pageBlockTable value="{!accs}" var="a1">
+                       
+        <apex:column value="{!a1.name}"/>
+                <apex:column value="{!a1.industry}"/>
+               <apex:column value="{!a1.ownerid}"/>
+             
+              <apex:column >
+               
+               <apex:repeat value="{!a1.contacts}" var="b">
+                  
+                  {!b.lastname}
+                  </apex:repeat>
+               </apex:column>
+               
+               
+             
+      </apex:pageBlockTable>
+      </apex:pageBlock>
+    
+    </apex:form>
+</apex:page>

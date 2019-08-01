@@ -1,0 +1,15 @@
+<apex:page controller="apexExample7" >
+    <apex:form >
+    <apex:pageBlock >
+        <apex:outputlabel value="Name"/>
+        <apex:inputText value="{!Name}"/><br/>
+        <apex:outputLabel value="Age"/>
+        <apex:inputtext value="{!age}"/><br/>
+        <apex:commandButton value="submit" action="{!getData}"/>
+        </apex:pageBlock>
+        <apex:pageBlock title="Result">
+            Name:{!name}<br/>
+            Age:{!Age}
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
